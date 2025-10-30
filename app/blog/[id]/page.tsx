@@ -1,8 +1,6 @@
-'use client'
 import Layout from "@/components/layout/Layout"
 import data from "@/util/blog.json"
-import { useParams } from "next/navigation"
-import { useEffect, useState } from "react"
+import { notFound } from "next/navigation"
 
 interface Post {
     id: number
@@ -13,36 +11,48 @@ interface Post {
     date: string
 }
 
-// This function runs at build time to generate static paths
+// Generate static params at build time
 export async function generateStaticParams() {
     return data.map((post: Post) => ({
         id: post.id.toString(),
     }))
 }
 
-export default function BlogDetails() {
-    let Router = useParams()
-    const [blogPost, setBlogPost] = useState<Post | null>(null)
-    const id = Router?.id
+// This runs at build time for each blog post
+export default function BlogDetails({ params }: { params: { id: string } }) {
+    const blogPost = data.find((post: Post) => String(post.id) === String(params.id))
 
-    useEffect(() => {
-        if (id) {
-            const post = data?.find((post: Post) => String(post.id) === String(id))
-            setBlogPost(post || null)
-        }
-    }, [id])
+    if (!blogPost) {
+        notFound()
+    }
 
     return (
-        <>
-            <Layout>
-                {blogPost ? (
-                    <>
-                        {blogPost.title}
-                    </>
-                ) : (
-                    <div>Loading...</div>
-                )}
-            </Layout>
-        </>
+        <Layout>
+            <div className="blog-details">
+                <h1>{blogPost.title}</h1>
+                <div className="blog-meta">
+                    <span>By {blogPost.author}</span>
+                    <span>{blogPost.date}</span>
+                    <span>Category: {blogPost.category}</span>
+                </div>
+                {/* Add more blog content here */}
+            </div>
+        </Layout>
     )
+}
+
+// Optional: Generate metadata for SEO
+export async function generateMetadata({ params }: { params: { id: string } }) {
+    const blogPost = data.find((post: Post) => String(post.id) === String(params.id))
+    
+    if (!blogPost) {
+        return {
+            title: 'Post Not Found'
+        }
+    }
+
+    return {
+        title: blogPost.title,
+        description: `Read ${blogPost.title} by ${blogPost.author}`,
+    }
 }
