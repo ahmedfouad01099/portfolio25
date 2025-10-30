@@ -13,6 +13,13 @@ interface Post {
     date: string
 }
 
+// This function runs at build time to generate static paths
+export async function generateStaticParams() {
+    return data.map((post: Post) => ({
+        id: post.id.toString(),
+    }))
+}
+
 export default function BlogDetails() {
     let Router = useParams()
     const [blogPost, setBlogPost] = useState<Post | null>(null)
@@ -28,10 +35,12 @@ export default function BlogDetails() {
     return (
         <>
             <Layout>
-                {blogPost && (
+                {blogPost ? (
                     <>
                         {blogPost.title}
                     </>
+                ) : (
+                    <div>Loading...</div>
                 )}
             </Layout>
         </>
