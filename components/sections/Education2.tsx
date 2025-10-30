@@ -5,62 +5,124 @@ interface EducationItem {
   description: string;
 }
 
-interface ResearchItem {
+interface CourseItem {
   id: number;
   period: string;
   title: string;
   description: string;
 }
 
+interface InterestCategory {
+  id: number;
+  title: string;
+  items: string[];
+  icon: string;
+}
+
 export default function Education2() {
   const educationItems: EducationItem[] = [
     {
       id: 1,
-      period: "2020-2024:",
-      institution: "MIT",
-      description: "Bachelor's Degree in Computer Science",
-    },
-    {
-      id: 2,
-      period: "2018-2019:",
-      institution: "Harvard University",
-      description: "Certification in React and Redux, Node.js Developer Course",
-    },
-    {
-      id: 3,
-      period: "2015-2016:",
-      institution: "Stanford University",
-      description: "Certification in Full Stack Web Development",
-    },
-    {
-      id: 4,
-      period: "2013-2015:",
-      institution: "University of Washington",
-      description: "Certification in React and Redux, Node.js Developer Course",
+      period: "2017 – 2021",
+      institution: "Mansoura University",
+      description: "BSc in Software Engineering, Faculty of Computer & Information Science",
     },
   ];
 
-  const researchItems: ResearchItem[] = [
+  const coursesItems: CourseItem[] = [
     {
       id: 1,
-      period: "2023-2024:",
-      title: "Advanced Data Analytics with Big Data Tools",
+      period: "Jan 2024 – Present",
+      title: "DevOps & Cloud - Udemy",
       description:
-        "Utilized big data tools for advanced analytics and insights.",
+        "Docker & Kubernetes (Swarm, Helm, Production) • Microservices Architecture (Node.js, React, CI/CD Pipelines)",
     },
     {
       id: 2,
-      period: "2021-2013:",
-      title: "Cloud-Native Application Architectures",
+      period: "Jan 2023 – Present",
+      title: "Backend & Architecture - Udemy",
       description:
-        "Studied best practices for designing cloud-native applications.",
+        "Node.js Professional (Microservices, GraphQL, REST) • Laravel 10 (API Development, MVC Patterns)",
     },
     {
       id: 3,
-      period: "2019-2020:",
-      title: "AI-Driven User Experience Personalization",
+      period: "Jan 2020 – Present",
+      title: "Computer Science Fundamentals - Udemy",
       description:
-        "Leveraged AI to personalize user experiences based on behavior.",
+        "JavaScript Algorithms (Data Structures, Optimization) by Colt Steele",
+    },
+    {
+      id: 4,
+      period: "Jan 2020 – Jan 2021",
+      title: "Advanced React & Frontend - Udemy",
+      description:
+        "React Mastery (Hooks, Context, Performance) • React Native Expert (Expo/CLI, Reanimated, Gesture Handler)",
+    },
+  ];
+
+  const technicalInterests: InterestCategory[] = [
+    {
+      id: 1,
+      title: "Swift & iOS",
+      icon: "📱",
+      items: [
+        "visionOS (spatial computing)",
+        "SwiftUI",
+        "Core ML for on-device AI",
+      ],
+    },
+    {
+      id: 2,
+      title: "Android & Kotlin",
+      icon: "🤖",
+      items: [
+        "Native Android development",
+        "Jetpack Compose",
+        "Coroutines, Ktor",
+      ],
+    },
+    {
+      id: 3,
+      title: "AI & ML",
+      icon: "🧠",
+      items: [
+        "Core ML & Create ML (on-device ML for iOS)",
+        "TensorFlow Lite / PyTorch Mobile",
+        "LangChain / OpenAI APIs (LLM integration)",
+      ],
+    },
+    {
+      id: 4,
+      title: "Backend & APIs",
+      icon: "⚙️",
+      items: [
+        "NestJS (structured Node.js backend)",
+        "GraphQL Federation (scalable architecture)",
+        "gRPC (high-performance APIs for mobile)",
+      ],
+    },
+  ];
+
+  const certificationsInProgress = [
+    {
+      id: 1,
+      title: "AWS Certified Cloud Practitioner",
+      description: "Cloud fundamentals (EC2, S3, Lambda)",
+    },
+    {
+      id: 2,
+      title: "AWS Certified Developer (Associate)",
+      description: "Serverless, CI/CD, Docker on AWS",
+    },
+    {
+      id: 3,
+      title: "Apple Certified Developer (visionOS)",
+      description: "Spatial computing & SwiftUI",
+    },
+    {
+      id: 4,
+      title: "Google Professional Machine Learning Engineer",
+      description: "LLM deployment, TensorFlow",
     },
   ];
 
@@ -72,7 +134,7 @@ export default function Education2() {
   }: {
     title: string;
     icon: JSX.Element;
-    items: EducationItem[] | ResearchItem[];
+    items: EducationItem[] | CourseItem[];
     bgClass?: string;
   }) => (
     <div
@@ -158,11 +220,98 @@ export default function Education2() {
             </div>
             <div className="col-lg-6 pt-3">
               <EducationCard
-                title="Researched"
+                title="Courses & Certifications"
                 icon={researchIcon}
-                items={researchItems}
+                items={coursesItems}
                 bgClass="bg-3"
               />
+            </div>
+          </div>
+
+          {/* Technical Interests Section */}
+          <div className="row mt-5">
+            <div className="col-12">
+              <div className="rounded-3 border border-1 position-relative overflow-hidden">
+                <div className="box-linear-animation position-relative z-1">
+                  <div className="p-lg-8 p-md-6 p-3 position-relative z-1">
+                    <div className="d-flex align-items-center mb-5">
+                      <svg
+                        className="text-primary-2 me-2"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={5}
+                        height={6}
+                        viewBox="0 0 5 6"
+                        fill="none"
+                      >
+                        <circle cx="2.5" cy={3} r="2.5" fill="#A8FF53" />
+                      </svg>
+                      <span className="text-linear-4 d-flex align-items-center">
+                        Technical Interests
+                      </span>
+                    </div>
+
+                    <div className="row g-4">
+                      {technicalInterests.map((interest) => (
+                        <div key={interest.id} className="col-lg-3 col-md-6">
+                          <div className="border border-1 rounded-3 p-4 h-100 bg-3">
+                            <div className="d-flex align-items-center mb-3">
+                              <span className="fs-3 me-2">{interest.icon}</span>
+                              <h5 className="mb-0 text-primary-2">
+                                {interest.title}
+                              </h5>
+                            </div>
+                            <ul className="list-unstyled mb-0">
+                              {interest.items.map((item, index) => (
+                                <li key={index} className="text-300 mb-2">
+                                  • {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-5">
+                      <h5 className="text-linear-4 mb-4">
+                        Certifications in Progress
+                      </h5>
+                      <div className="row g-3">
+                        {certificationsInProgress.map((cert) => (
+                          <div key={cert.id} className="col-lg-6 col-md-6">
+                            <div className="border border-1 rounded-3 p-3 d-flex align-items-start gap-3">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width={20}
+                                height={20}
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                className="mt-1 flex-shrink-0"
+                              >
+                                <path
+                                  d="M10 0L12.2451 6.90983L19.5106 6.90983L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983L7.75486 6.90983L10 0Z"
+                                  fill="#A8FF53"
+                                />
+                              </svg>
+                              <div>
+                                <h6 className="mb-1 text-dark">{cert.title}</h6>
+                                <p className="text-300 mb-0 small">
+                                  {cert.description}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    className="position-absolute top-0 start-0 z-0"
+                    src="assets/imgs/home-page-2/services/bg.png"
+                    alt="zelio"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

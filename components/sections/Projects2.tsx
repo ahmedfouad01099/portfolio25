@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
+import { useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperType } from "swiper";
 
 interface ProjectItem {
   id: number;
@@ -32,32 +34,211 @@ const swiperOptions = {
     prevEl: ".swiper-button-prev",
   },
 };
+const imageLinks = [
+  // tactec
+  "https://i.postimg.cc/xcM04QHv/1.webp",
+  "https://i.postimg.cc/F12rpzfZ/2.webp",
 
+  // usedo
+  "https://i.postimg.cc/HVXphm5K/1.webp",
+  "https://i.postimg.cc/vcfQNy92/2.webp",
+  "https://i.postimg.cc/1fw9jS6M/3.webp",
+
+  // LOC
+  "https://i.postimg.cc/zVKJcNKY/1.webp",
+  "https://i.postimg.cc/vcfQNyfF/2.webp",
+  "https://i.postimg.cc/mtCb54Cx/3.webp",
+
+  // LOC tablet
+  "https://i.postimg.cc/FYv9t6VF/1.webp",
+  "https://i.postimg.cc/LJSHdWBc/2.webp",
+  "https://i.postimg.cc/yDKVqGX5/3.webp",
+
+  // Hedeya
+  "https://i.postimg.cc/MXcZ1VG6/1.webp",
+  "https://i.postimg.cc/Z09Y6pqz/2.webp",
+  "https://i.postimg.cc/V5SsXnNQ/3.webp",
+
+  // Salahub
+  "https://i.postimg.cc/dDzs637T/1.webp",
+  "https://i.postimg.cc/V53fgvSs/2.webp",
+  "https://i.postimg.cc/0rLknj6q/3.webp",
+
+  // cannula
+  "https://i.postimg.cc/v4vGGv0g/1.webp",
+  "https://i.postimg.cc/G4jbbjXt/2.webp",
+
+  // Cannula Tablet
+  "https://i.postimg.cc/HrtTTt6B/2.webp",
+  "https://i.postimg.cc/4Y1XX1WP/3.webp",
+
+  // continue sorting
+  "https://i.postimg.cc/grfzsjwy/3.webp",
+  "https://i.postimg.cc/YvxttxdS/3.webp",
+  "https://i.postimg.cc/Yvxttxd3/4.webp",
+  "https://i.postimg.cc/7f0xW47V/4.webp",
+  "https://i.postimg.cc/hfTS5nxk/4.webp",
+  "https://i.postimg.cc/hhJ4VTt5/4.webp",
+  "https://i.postimg.cc/HjJWbXLW/4.webp",
+  "https://i.postimg.cc/FYv9t6g6/4.webp",
+  "https://i.postimg.cc/gxpY97HX/4.webp",
+  "https://i.postimg.cc/fk6zCy3c/4.webp",
+  "https://i.postimg.cc/JsQRRQpN/5.webp",
+  "https://i.postimg.cc/ppz26v83/5.webp",
+  "https://i.postimg.cc/nXxH8WYP/5.webp",
+  "https://i.postimg.cc/xXQ0rZ3T/5.webp",
+  "https://i.postimg.cc/vDpYhT1n/5.webp",
+  "https://i.postimg.cc/w1k99kwL/6.webp",
+  "https://i.postimg.cc/xcM04QHG/6.webp",
+  "https://i.postimg.cc/PPYtRHZQ/7.webp",
+  "https://i.postimg.cc/MnYzzY9j/7.webp",
+  "https://i.postimg.cc/FYxhhxTx/8.webp",
+  "https://i.postimg.cc/sMzVFL4M/8.webp",
+  "https://i.postimg.cc/t7LqkJ1F/8.webp",
+  "https://i.postimg.cc/cvcddcFM/9.webp",
+  "https://i.postimg.cc/k2CnrHvD/9.webp",
+  "https://i.postimg.cc/GHGc5RYs/logo.webp",
+  "https://i.postimg.cc/w7L6GzJf/logo.webp",
+  "https://i.postimg.cc/nMsVqBh3/logo.webp",
+  "https://i.postimg.cc/qgtB2y7d/logo.png",
+  "https://i.postimg.cc/WtDp0g42/logo.webp",
+  "https://i.postimg.cc/xqWf58kd/logo.webp",
+  "https://i.postimg.cc/23PkGyqb/logo.webp",
+  "https://i.postimg.cc/K4KctBY2/vendoria.png",
+  "https://i.postimg.cc/bGtcsHTB/logo.webp",
+  "https://i.postimg.cc/560rXS9q/1.png",
+  "https://i.postimg.cc/8j5Y7mkJ/2.png",
+  "https://i.postimg.cc/1ftd8rRF/3.png",
+  "https://i.postimg.cc/Yh9Pvz2j/4.png",
+  "https://i.postimg.cc/JtKg728B/5.png",
+  "https://i.postimg.cc/F7R6YVFr/6.png",
+  "https://i.postimg.cc/bsJ5Z9YY/7.png",
+];
 export default function Projects2() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+
+  interface ProjectItem {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+    client: string;
+    completionTime: string;
+    technologies: string;
+    liveDemoLink: string;
+    githubLink: string;
+  }
+
   const projects: ProjectItem[] = [
     {
       id: 1,
-      title: "Integrate AI into the<br />ecommerce system",
+      title: "LOC App - Label on a Cable",
       description:
-        "Developed an online learning platform with course management, quizzes, and progress tracking.",
-      image: "assets/imgs/home-page-2/projects/img-1.png",
-      client: "Conceptual JSC",
+        "An asset identification software platform for efficient, cost effective and reliable tracking of all assets within an organization. LOC makes the passive, smart – by bringing passive labels to life.",
+      image: "https://i.postimg.cc/9Xb45B5H/logo.webp",
+      client: "Label on a Cable",
       completionTime: "6 months",
-      technologies: "Node.js, React, MongoDB, Stripe",
-      liveDemoLink: "/work-single",
-      githubLink: "#",
+      technologies:
+        "Javascript, React Native CLI, Redux, React Navigation, React Query, NFC Manager, Lottie, SVG",
+      liveDemoLink:
+        "https://apps.apple.com/fi/app/loc-label-on-a-cable/id1643531827?platform=ipad",
+      githubLink: "https://github.com/ahmedfouad01099/LOC",
     },
     {
       id: 2,
-      title: "Integrate AI into the<br />ecommerce system",
+      title: "CANNULA - Medical Services Platform",
       description:
-        "Developed an online learning platform with course management, quizzes, and progress tracking.",
-      image: "assets/imgs/home-page-2/projects/img-1.png",
-      client: "Conceptual JSC",
+        "A medical services platform where doctors/nurses can register as service providers and connect with patients. Patients can request services, find doctor locations, and choose between urgent, corona, elder care services.",
+      image: "https://i.postimg.cc/CLKRFfSN/logo.webp",
+      client: "CANNULA FOR MEDICAL SERVICES",
       completionTime: "6 months",
-      technologies: "Node.js, React, MongoDB, Stripe",
-      liveDemoLink: "#",
-      githubLink: "#",
+      technologies:
+        "Javascript, Expo, React Navigation, Redux, Location Services, Notifications, Maps, React Query",
+      liveDemoLink:
+        "https://apps.apple.com/eg/app/cannula/id1602269914?platform=iphone",
+      githubLink: "https://github.com/ahmedfouad01099/canola",
+    },
+    {
+      id: 3,
+      title: "Hedeya Stores - Mothers & Kids E-commerce",
+      description:
+        "The leading mothers and kids store in Egypt & Middle East for toys, newborn necessities, mum's stuff, learning games, bathing necessities, car seats, strollers, and nursery items.",
+      image: "https://i.postimg.cc/CM7ZT4Tf/logo.webp",
+      client: "Hedeya Stores",
+      completionTime: "6 months",
+      technologies:
+        "Javascript, React Native CLI, React Navigation, Axios, Firebase, SQLite, Redux, React Query",
+      liveDemoLink: "https://apps.apple.com/eg/app/hedeya-stores/id1039973157",
+      githubLink: "https://bitbucket.org/hedeya/hedeya-mobile/src/master/",
+    },
+    {
+      id: 4,
+      title: "Usedo - Secondhand Selling Platform",
+      description:
+        "Kuwait's only secondhand selling app that eliminates meetups with secure payment gateway and reliable delivery services. Makes buying and selling secondhand items easy and exceptional.",
+      image: "https://i.postimg.cc/pX1pyXdH/logo.webp",
+      client: "Usedo | Sell & Buy Online",
+      completionTime: "6 months",
+      technologies:
+        "Typescript, React Native CLI, React Navigation, Axios, KNET Payment, Webview, Redux-Saga, Firebase",
+      liveDemoLink:
+        "https://apps.apple.com/eg/app/usedo-sell-buy-online/id1523226674",
+      githubLink: "https://bitbucket.org/microtechnologies/app-usedoo",
+    },
+    {
+      id: 5,
+      title: "Sala Hub - Entertainment Platform",
+      description:
+        "A leader in KSA's entertainment sector focusing on family bonding and social development. Enhances quality of life by spreading joy and driving progress throughout the Kingdom.",
+      image: "https://i.postimg.cc/02Nz8JP7/logo.webp",
+      client: "Sala Entertainment",
+      completionTime: "6 months",
+      technologies:
+        "Typescript, React Native CLI, Redux, React Navigation, Apollo Client, Firebase, Payment Processing",
+      liveDemoLink: "https://apps.apple.com/eg/app/sala-hub/id1582542716",
+      githubLink: "https://github.com/TCF-Sala/mobile",
+    },
+    {
+      id: 6,
+      title: "Tactec - Football Management System",
+      description:
+        "Comprehensive football management app for players, tactical, medical & management journeys to help clubs increase efficiency and performance.",
+      image: "https://i.postimg.cc/9fxWgLqC/logo.webp",
+      client: "Tactec Football",
+      completionTime: "6 months",
+      technologies:
+        "Typescript, React Native CLI, Redux, React Navigation, React Query, Firebase, Real-time Features",
+      liveDemoLink: "https://apps.apple.com/us/app/tactec/id1668711028",
+      githubLink: "https://github.com/ahmedfouad01099/UDAlmeria",
+    },
+    {
+      id: 7,
+      title: "Vendoria - E-commerce Backend System",
+      description:
+        "Robust backend system for e-commerce platform with user authentication, payment processing, inventory management, and real-time features.",
+      image: "https://i.postimg.cc/sfmBdJd1/logo.png",
+      client: "Vendoria",
+      completionTime: "6 months",
+      technologies:
+        "Javascript, Express, MongoDB, JWT, Socket.io, Stripe, PayPal, Cloudinary, Nodemailer",
+      liveDemoLink:
+        "https://www.apidog.com/apidoc/shared-fd59d3bb-1115-4e3a-b8f5-3fe5a56ca00d/doc-705458",
+      githubLink: "https://github.com/Vendoria/backend",
+    },
+    {
+      id: 8,
+      title: "Vendoria Dashboard - Admin Management System",
+      description:
+        "Comprehensive admin dashboard for managing e-commerce operations, analytics, user management, and business intelligence.",
+      image: "https://i.postimg.cc/ZKFzDw1g/1.png",
+      client: "Vendoria",
+      completionTime: "6 months",
+      technologies:
+        "Javascript, ReactJs, Redux Toolkit, Cloudinary, Chart.js, Socket.io, React Hook Form, i18next",
+      liveDemoLink:
+        "https://www.apidog.com/apidoc/shared-fd59d3bb-1115-4e3a-b8f5-3fe5a56ca00d/doc-705458",
+      githubLink: "https://github.com/Vendoria/backend",
     },
   ];
 
@@ -106,6 +287,7 @@ export default function Projects2() {
             <Link
               href={project.liveDemoLink}
               className="text-300 border-bottom border-1 px-2 pb-2 link-hover"
+              target="_blank"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -124,6 +306,7 @@ export default function Projects2() {
             <Link
               href={project.githubLink}
               className="text-300 border-bottom border-1 px-2 pb-2 link-hover"
+              target="_blank"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -145,8 +328,39 @@ export default function Projects2() {
     </div>
   );
 
+  const handlePrev = () => {
+    const newIndex =
+      currentIndex === 0 ? projects.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+    swiperInstance?.slideTo(newIndex);
+  };
+
+  const handleNext = () => {
+    const newIndex =
+      currentIndex === projects.length - 1 ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+    swiperInstance?.slideTo(newIndex);
+  };
+
   const PrevArrow = () => (
-    <div className="swiper-button-prev end-0 shadow position-relative">
+    <div
+      className="shadow position-relative d-flex align-items-center justify-content-center"
+      style={{
+        cursor: "pointer",
+        width: "48px",
+        height: "48px",
+        borderRadius: "50%",
+        backgroundColor: "#1a1a1a",
+        transition: "all 0.3s ease",
+      }}
+      onClick={handlePrev}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.backgroundColor = "#2a2a2a";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.backgroundColor = "#1a1a1a";
+      }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={24}
@@ -163,7 +377,24 @@ export default function Projects2() {
   );
 
   const NextArrow = () => (
-    <div className="swiper-button-next end-0 shadow position-relative">
+    <div
+      className="shadow position-relative d-flex align-items-center justify-content-center"
+      style={{
+        cursor: "pointer",
+        width: "48px",
+        height: "48px",
+        borderRadius: "50%",
+        backgroundColor: "#1a1a1a",
+        transition: "all 0.3s ease",
+      }}
+      onClick={handleNext}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.backgroundColor = "#2a2a2a";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.backgroundColor = "#1a1a1a";
+      }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={24}
@@ -205,6 +436,10 @@ export default function Projects2() {
                 <div className="position-relative">
                   <Swiper
                     {...swiperOptions}
+                    onSwiper={setSwiperInstance}
+                    onSlideChange={(swiper) =>
+                      setCurrentIndex(swiper.realIndex)
+                    }
                     className="swiper slider-two pb-3 position-relative"
                   >
                     <div className="swiper-wrapper">
@@ -215,7 +450,10 @@ export default function Projects2() {
                       ))}
                     </div>
                   </Swiper>
-                  <div className="position-absolute bottom-0 end-0 gap-2 pb-7 pe-5 d-none d-md-flex">
+                  <div
+                    className="position-absolute bottom-0 end-0 gap-2 pb-7 pe-5 d-none d-md-flex"
+                    style={{ zIndex: 10 }}
+                  >
                     <PrevArrow />
                     <NextArrow />
                   </div>

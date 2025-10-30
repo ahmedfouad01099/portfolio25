@@ -28,8 +28,8 @@ const dmMono = DM_Mono({
 })
 
 export const metadata: Metadata = {
-	title: "Zelio - Personal Portfolio Template",
-	description: "Zelio - Personal Portfolio Template",
+	title: "Ahmed Fouad - Full-Stack Engineer | React.js • Node.js • Docker/Kubernetes",
+	description: "Full-Stack Engineer specializing in React Native, Node.js, and scalable web & mobile applications. Experienced in MERN stack, Docker, Kubernetes, and microservices architecture.",
 }
 
 export default function RootLayout({

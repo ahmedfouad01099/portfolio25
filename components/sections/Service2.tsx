@@ -27,7 +27,7 @@ export default function Service2() {
       ),
       title: "Web & App Development",
       description:
-        "Crafting visually appealing and user-friendly interfaces using <span class='text-secondary-2'>HTML</span>, <span class='text-secondary-2'>CSS</span>, <span class='text-secondary-2'>JavaScript</span>, and modern frameworks like React and Angular.",
+        "Crafting visually appealing and user-friendly interfaces using  <span class='text-secondary-2'>JavaScript</span>, <span class='text-secondary-2'>Typescript</span> and modern frameworks like Nextjs and React Native.",
     },
     {
       id: 2,
@@ -47,7 +47,7 @@ export default function Service2() {
       ),
       title: "Database Management",
       description:
-        "Designing and managing databases with SQL and NoSQL technologies such as <span class='text-secondary-2'>MySQL</span>, <span class='text-secondary-2'>PostgreSQL</span>, and <span class='text-secondary-2'>MongoDB</span>.",
+        "Designing and managing databases with SQL and NoSQL technologies such as <span class='text-secondary-2'>MySQL</span>, <span class='text-secondary-2'>Firebase</span>, and <span class='text-secondary-2'>MongoDB</span>.",
     },
     {
       id: 3,
@@ -67,7 +67,7 @@ export default function Service2() {
       ),
       title: "API Development",
       description:
-        "Creating and integrating <span class='text-secondary-2'>RESTful APIs</span> to enable smooth communication between front-end and back-end systems.",
+        "Creating and integrating <span class='text-secondary-2'>RESTful APIs</span> and <span class='text-secondary-2'>GraphQL</span> to enable smooth communication between front-end and back-end systems.",
     },
     {
       id: 4,
@@ -188,7 +188,7 @@ export default function Service2() {
                       <span className="text-dark">new projects</span> and
                       collaborate. <br />
                       Let's chat about your ideas.{" "}
-                      <Link href="#" className="text-primary-2">
+                      <Link href="#contact" className="text-primary-2">
                         Reach out!
                       </Link>
                     </p>

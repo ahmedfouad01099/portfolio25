@@ -307,24 +307,31 @@ const logos: LogoItem[] = [
 const contacts: ContactItem[] = [
   {
     id: 1,
-    icon: "ri-skype-fill",
-    label: "[skype]",
-    value: "james.dev",
-    href: "#",
+    icon: "ri-linkedin-fill",
+    label: "[linkedin]",
+    value: "ahmed-fouad",
+    href: "https://www.linkedin.com/in/ahmed-fouad-b4b9b51a6/",
   },
   {
     id: 2,
     icon: "ri-phone-fill",
     label: "[phone]",
-    value: "+1-234-567-8901",
-    href: "#",
+    value: "+20 1099053978",
+    href: "tel:+201099053978",
   },
   {
     id: 3,
     icon: "ri-mail-fill",
     label: "[email]",
-    value: "contact@james.dev",
-    href: "#",
+    value: "ahmedfouad01099@gmail.com",
+    href: "mailto:ahmedfouad01099@gmail.com",
+  },
+  {
+    id: 4,
+    icon: "ri-github-fill",
+    label: "[github]",
+    value: "ahmedfouad01099",
+    href: "https://github.com/ahmedfouad01099",
   },
 ];
 

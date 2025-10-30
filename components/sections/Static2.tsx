@@ -13,27 +13,27 @@ export default function Static2() {
     {
       id: 1,
       icon: "ri-shape-line",
-      endValue: 12,
+      endValue: 5,
       text: "Year Experience",
     },
     {
       id: 2,
       icon: "ri-computer-line",
-      endValue: 250,
+      endValue: 12,
       text: "Projects Completed",
     },
     {
       id: 3,
       icon: "ri-service-line",
-      endValue: 680,
+      endValue: 12,
       text: "Satisfied Clients",
     },
-    {
-      id: 4,
-      icon: "ri-award-line",
-      endValue: 18,
-      text: "Awards Winner",
-    },
+    // {
+    //   id: 4,
+    //   icon: "ri-award-line",
+    //   endValue: 18,
+    //   text: "Awards Winner",
+    // },
   ];
 
   const StatCard = ({ stat }: { stat: StatItem }) => (
