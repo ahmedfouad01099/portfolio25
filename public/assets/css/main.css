@@ -1926,7 +1926,7 @@ textarea {
 }
 
 .text-dark {
-  color: #ffffff !important;
+  color: var(--tc-neutral-0) !important;
 }
 
 .text-primary-1 {
