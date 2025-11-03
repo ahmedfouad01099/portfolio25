@@ -34,86 +34,281 @@ const swiperOptions = {
     prevEl: ".swiper-button-prev",
   },
 };
-const imageLinks = [
-  // tactec
-  "https://i.postimg.cc/xcM04QHv/1.webp",
-  "https://i.postimg.cc/F12rpzfZ/2.webp",
 
-  // usedo
-  "https://i.postimg.cc/HVXphm5K/1.webp",
-  "https://i.postimg.cc/vcfQNy92/2.webp",
-  "https://i.postimg.cc/1fw9jS6M/3.webp",
-
-  // LOC
-  "https://i.postimg.cc/zVKJcNKY/1.webp",
-  "https://i.postimg.cc/vcfQNyfF/2.webp",
-  "https://i.postimg.cc/mtCb54Cx/3.webp",
-
-  // LOC tablet
-  "https://i.postimg.cc/FYv9t6VF/1.webp",
-  "https://i.postimg.cc/LJSHdWBc/2.webp",
-  "https://i.postimg.cc/yDKVqGX5/3.webp",
-
-  // Hedeya
-  "https://i.postimg.cc/MXcZ1VG6/1.webp",
-  "https://i.postimg.cc/Z09Y6pqz/2.webp",
-  "https://i.postimg.cc/V5SsXnNQ/3.webp",
-
-  // Salahub
-  "https://i.postimg.cc/dDzs637T/1.webp",
-  "https://i.postimg.cc/V53fgvSs/2.webp",
-  "https://i.postimg.cc/0rLknj6q/3.webp",
-
-  // cannula
-  "https://i.postimg.cc/v4vGGv0g/1.webp",
-  "https://i.postimg.cc/G4jbbjXt/2.webp",
-
-  // Cannula Tablet
-  "https://i.postimg.cc/HrtTTt6B/2.webp",
-  "https://i.postimg.cc/4Y1XX1WP/3.webp",
-
-  // continue sorting
-  "https://i.postimg.cc/grfzsjwy/3.webp",
-  "https://i.postimg.cc/YvxttxdS/3.webp",
-  "https://i.postimg.cc/Yvxttxd3/4.webp",
-  "https://i.postimg.cc/7f0xW47V/4.webp",
-  "https://i.postimg.cc/hfTS5nxk/4.webp",
-  "https://i.postimg.cc/hhJ4VTt5/4.webp",
-  "https://i.postimg.cc/HjJWbXLW/4.webp",
-  "https://i.postimg.cc/FYv9t6g6/4.webp",
-  "https://i.postimg.cc/gxpY97HX/4.webp",
-  "https://i.postimg.cc/fk6zCy3c/4.webp",
-  "https://i.postimg.cc/JsQRRQpN/5.webp",
-  "https://i.postimg.cc/ppz26v83/5.webp",
-  "https://i.postimg.cc/nXxH8WYP/5.webp",
-  "https://i.postimg.cc/xXQ0rZ3T/5.webp",
-  "https://i.postimg.cc/vDpYhT1n/5.webp",
-  "https://i.postimg.cc/w1k99kwL/6.webp",
-  "https://i.postimg.cc/xcM04QHG/6.webp",
-  "https://i.postimg.cc/PPYtRHZQ/7.webp",
-  "https://i.postimg.cc/MnYzzY9j/7.webp",
-  "https://i.postimg.cc/FYxhhxTx/8.webp",
-  "https://i.postimg.cc/sMzVFL4M/8.webp",
-  "https://i.postimg.cc/t7LqkJ1F/8.webp",
-  "https://i.postimg.cc/cvcddcFM/9.webp",
-  "https://i.postimg.cc/k2CnrHvD/9.webp",
-  "https://i.postimg.cc/GHGc5RYs/logo.webp",
-  "https://i.postimg.cc/w7L6GzJf/logo.webp",
-  "https://i.postimg.cc/nMsVqBh3/logo.webp",
-  "https://i.postimg.cc/qgtB2y7d/logo.png",
-  "https://i.postimg.cc/WtDp0g42/logo.webp",
-  "https://i.postimg.cc/xqWf58kd/logo.webp",
-  "https://i.postimg.cc/23PkGyqb/logo.webp",
-  "https://i.postimg.cc/K4KctBY2/vendoria.png",
-  "https://i.postimg.cc/bGtcsHTB/logo.webp",
-  "https://i.postimg.cc/560rXS9q/1.png",
-  "https://i.postimg.cc/8j5Y7mkJ/2.png",
-  "https://i.postimg.cc/1ftd8rRF/3.png",
-  "https://i.postimg.cc/Yh9Pvz2j/4.png",
-  "https://i.postimg.cc/JtKg728B/5.png",
-  "https://i.postimg.cc/F7R6YVFr/6.png",
-  "https://i.postimg.cc/bsJ5Z9YY/7.png",
+const projects = [
+  {
+    id: 1,
+    title: "LOC App - Label on a Cable",
+    description:
+      "An asset identification software platform for efficient, cost effective and reliable tracking of all assets within an organization. LOC makes the passive, smart – by bringing passive labels to life.",
+    image: "https://i.postimg.cc/9Xb45B5H/logo.webp",
+    client: "Label on a Cable",
+    completionTime: "6 months",
+    technologies:
+      "Javascript, React Native CLI, Redux, React Navigation, React Query, NFC Manager, Lottie, SVG",
+    liveDemoLink:
+      "https://apps.apple.com/fi/app/loc-label-on-a-cable/id1643531827?platform=ipad",
+    githubLink: "https://github.com/ahmedfouad01099/LOC",
+    features: [
+      "NFC-powered asset tracking and management system",
+      "Offline-first architecture with background synchronization",
+      "Real-time inventory management and reporting",
+      "Cross-platform compatibility for iOS and Android devices",
+      "Secure data encryption and user authentication",
+    ],
+    technologiesDetailed: [
+      "Frontend: React Native CLI, Redux, React Navigation, Lottie",
+      "Backend: Node.js, Express.js, MongoDB",
+      "Database: SQLite for offline storage, MongoDB for cloud",
+      "APIs: React Native NFC Manager for asset scanning",
+      "State Management: Redux with Redux Thunk for async operations",
+      "Animation: Lottie for smooth animations and loading states",
+    ],
+    designHighlights: [
+      "Intuitive user interface for easy asset management",
+      "Responsive design adapting to various screen sizes",
+      "Clean and professional visual design",
+      "Accessibility features for diverse user needs",
+    ],
+  },
+  {
+    id: 2,
+    title: "CANNULA - Medical Services Platform",
+    description:
+      "A medical services platform where doctors/nurses can register as service providers and connect with patients. Patients can request services, find doctor locations, and choose between urgent, corona, elder care services.",
+    image: "https://i.postimg.cc/CLKRFfSN/logo.webp",
+    client: "CANNULA FOR MEDICAL SERVICES",
+    completionTime: "6 months",
+    technologies:
+      "Javascript, Expo, React Navigation, Redux, Location Services, Notifications, Maps, React Query",
+    liveDemoLink:
+      "https://apps.apple.com/eg/app/cannula/id1602269914?platform=iphone",
+    githubLink: "https://github.com/ahmedfouad01099/canola",
+    features: [
+      "Real-time doctor-patient matching algorithm",
+      "Location-based service provider discovery",
+      "Secure medical service requests and scheduling",
+      "Multi-language support for diverse user base",
+      "Emergency services and urgent care options",
+    ],
+    technologiesDetailed: [
+      "Frontend: React Native Expo, Redux, React Navigation",
+      "Location: Expo Location Services, React Native Maps",
+      "Notifications: Expo Push Notifications for alerts",
+      "State Management: Redux with async actions",
+      "Database: Firebase Firestore for real-time data",
+    ],
+    designHighlights: [
+      "User-friendly interface for medical professionals",
+      "Emergency-focused design with quick access features",
+      "Multi-language support with RTL compatibility",
+      "Accessible design for users with disabilities",
+    ],
+  },
+  {
+    id: 3,
+    title: "Hedeya Stores - Mothers & Kids E-commerce",
+    description:
+      "The leading mothers and kids store in Egypt & Middle East for toys, newborn necessities, mum's stuff, learning games, bathing necessities, car seats, strollers, and nursery items.",
+    image: "https://i.postimg.cc/CM7ZT4Tf/logo.webp",
+    client: "Hedeya Stores",
+    completionTime: "6 months",
+    technologies:
+      "Javascript, React Native CLI, React Navigation, Axios, Firebase, SQLite, Redux, React Query",
+    liveDemoLink: "https://apps.apple.com/eg/app/hedeya-stores/id1039973157",
+    githubLink: "https://bitbucket.org/hedeya/hedeya-mobile/src/master/",
+    features: [
+      "Complete e-commerce shopping experience",
+      "Product catalog with advanced filtering",
+      "Secure payment gateway integration",
+      "Order tracking and management system",
+      "Wishlist and favorite products functionality",
+    ],
+    technologiesDetailed: [
+      "Frontend: React Native CLI, Redux, React Navigation",
+      "Backend: Node.js, Express.js, MongoDB",
+      "Payment: Stripe and local payment gateways",
+      "Database: SQLite for offline cart, MongoDB for products",
+      "State Management: Redux with persistent storage",
+    ],
+    designHighlights: [
+      "Family-friendly design appealing to parents",
+      "Easy navigation for product discovery",
+      "Visual product catalogs with high-quality images",
+      "Streamlined checkout process",
+    ],
+  },
+  {
+    id: 4,
+    title: "Usedo - Secondhand Selling Platform",
+    description:
+      "Kuwait's only secondhand selling app that eliminates meetups with secure payment gateway and reliable delivery services. Makes buying and selling secondhand items easy and exceptional.",
+    image: "https://i.postimg.cc/pX1pyXdH/logo.webp",
+    client: "Usedo | Sell & Buy Online",
+    completionTime: "6 months",
+    technologies:
+      "Typescript, React Native CLI, React Navigation, Axios, KNET Payment, Webview, Redux-Saga, Firebase",
+    liveDemoLink:
+      "https://apps.apple.com/eg/app/usedo-sell-buy-online/id1523226674",
+    githubLink: "https://bitbucket.org/microtechnologies/app-usedoo",
+    features: [
+      "Secure peer-to-peer transaction system",
+      "Integrated payment gateway with KNET support",
+      "Professional delivery service integration",
+      "Product verification and quality assurance",
+      "User rating and review system",
+    ],
+    technologiesDetailed: [
+      "Frontend: React Native CLI, TypeScript, Redux-Saga",
+      "Payment: KNET payment gateway integration",
+      "Backend: Node.js, Express.js, MongoDB",
+      "State Management: Redux-Saga for side effects",
+      "Authentication: Firebase Auth for user management",
+    ],
+    designHighlights: [
+      "Trust-focused design for secondhand marketplace",
+      "Clear product presentation and verification",
+      "Secure transaction flow design",
+      "User-friendly buying and selling processes",
+    ],
+  },
+  {
+    id: 5,
+    title: "Sala Hub - Entertainment Platform",
+    description:
+      "A leader in KSA's entertainment sector focusing on family bonding and social development. Enhances quality of life by spreading joy and driving progress throughout the Kingdom.",
+    image: "https://i.postimg.cc/02Nz8JP7/logo.webp",
+    client: "Sala Entertainment",
+    completionTime: "6 months",
+    technologies:
+      "Typescript, React Native CLI, Redux, React Navigation, Apollo Client, Firebase, Payment Processing",
+    liveDemoLink: "https://apps.apple.com/eg/app/sala-hub/id1582542716",
+    githubLink: "https://github.com/TCF-Sala/mobile",
+    features: [
+      "Event booking and ticket management",
+      "Venue discovery and reservation system",
+      "Family-friendly activity recommendations",
+      "Social features and event sharing",
+      "Multi-language support for international users",
+    ],
+    technologiesDetailed: [
+      "Frontend: React Native CLI, TypeScript, Apollo Client",
+      "Backend: GraphQL API with Node.js",
+      "Payment: Integrated payment processing",
+      "Database: MongoDB with complex querying",
+      "State Management: Redux with GraphQL integration",
+    ],
+    designHighlights: [
+      "Entertainment-focused vibrant design",
+      "Family-oriented user experience",
+      "Easy event discovery and booking",
+      "Social sharing and engagement features",
+    ],
+  },
+  {
+    id: 6,
+    title: "Tactec - Football Management System",
+    description:
+      "Comprehensive football management app for players, tactical, medical & management journeys to help clubs increase efficiency and performance.",
+    image: "https://i.postimg.cc/9fxWgLqC/logo.webp",
+    client: "Tactec Football",
+    completionTime: "6 months",
+    technologies:
+      "Typescript, React Native CLI, Redux, React Navigation, React Query, Firebase, Real-time Features",
+    liveDemoLink: "https://apps.apple.com/us/app/tactec/id1668711028",
+    githubLink: "https://github.com/ahmedfouad01099/UDAlmeria",
+    features: [
+      "Player performance tracking and analytics",
+      "Tactical session planning and execution",
+      "Medical and fitness monitoring",
+      "Team management and communication tools",
+      "Real-time match statistics and analysis",
+    ],
+    technologiesDetailed: [
+      "Frontend: React Native CLI, TypeScript, React Query",
+      "Backend: Node.js, Express.js, Socket.io",
+      "Database: MongoDB with real-time capabilities",
+      "Analytics: Custom performance tracking algorithms",
+      "State Management: Redux with real-time updates",
+    ],
+    designHighlights: [
+      "Sports-focused professional interface",
+      "Data visualization for performance metrics",
+      "Coach and player-specific workflows",
+      "Real-time updating during matches and sessions",
+    ],
+  },
+  {
+    id: 7,
+    title: "Vendoria - E-commerce Backend System",
+    description:
+      "Robust backend system for e-commerce platform with user authentication, payment processing, inventory management, and real-time features.",
+    image: "https://i.postimg.cc/sfmBdJd1/logo.png",
+    client: "Vendoria",
+    completionTime: "6 months",
+    technologies:
+      "Javascript, Express, MongoDB, JWT, Socket.io, Stripe, PayPal, Cloudinary, Nodemailer",
+    liveDemoLink:
+      "https://www.apidog.com/apidoc/shared-fd59d3bb-1115-4e3a-b8f5-3fe5a56ca00d/doc-705458",
+    githubLink: "https://github.com/Vendoria/backend",
+    features: [
+      "Complete user authentication and authorization",
+      "Multi-payment gateway integration (Stripe, PayPal)",
+      "Real-time inventory management system",
+      "Order processing and fulfillment tracking",
+      "Admin dashboard with analytics and reporting",
+    ],
+    technologiesDetailed: [
+      "Backend: Node.js, Express.js, Socket.io",
+      "Database: MongoDB with Mongoose ODM",
+      "Authentication: JWT with refresh tokens",
+      "Payment: Stripe, PayPal integration",
+      "File Management: Cloudinary for media storage",
+      "Email: Nodemailer for notifications",
+    ],
+    designHighlights: [
+      "RESTful API architecture",
+      "Scalable microservices design",
+      "Comprehensive documentation",
+      "Secure payment processing flow",
+    ],
+  },
+  {
+    id: 8,
+    title: "Vendoria Dashboard - Admin Management System",
+    description:
+      "Comprehensive admin dashboard for managing e-commerce operations, analytics, user management, and business intelligence.",
+    image: "https://i.postimg.cc/ZKFzDw1g/1.png",
+    client: "Vendoria",
+    completionTime: "6 months",
+    technologies:
+      "Javascript, ReactJs, Redux Toolkit, Cloudinary, Chart.js, Socket.io, React Hook Form, i18next",
+    liveDemoLink:
+      "https://www.apidog.com/apidoc/shared-fd59d3bb-1115-4e3a-b8f5-3fe5a56ca00d/doc-705458",
+    githubLink: "https://github.com/Vendoria/backend",
+    features: [
+      "Real-time business analytics and reporting",
+      "User management and role-based access control",
+      "Product and inventory management system",
+      "Order processing and customer service tools",
+      "Multi-language admin interface",
+    ],
+    technologiesDetailed: [
+      "Frontend: React.js, Redux Toolkit, Chart.js",
+      "Backend: Node.js, Express.js, Socket.io",
+      "Charts: Chart.js for data visualization",
+      "Forms: React Hook Form for complex forms",
+      "Internationalization: i18next for multi-language",
+    ],
+    designHighlights: [
+      "Admin-focused dashboard design",
+      "Data visualization with interactive charts",
+      "Efficient workflow for management tasks",
+      "Responsive design for various devices",
+    ],
+  },
 ];
+
 export default function Projects2() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
@@ -130,118 +325,6 @@ export default function Projects2() {
     githubLink: string;
   }
 
-  const projects: ProjectItem[] = [
-    {
-      id: 1,
-      title: "LOC App - Label on a Cable",
-      description:
-        "An asset identification software platform for efficient, cost effective and reliable tracking of all assets within an organization. LOC makes the passive, smart – by bringing passive labels to life.",
-      image: "https://i.postimg.cc/9Xb45B5H/logo.webp",
-      client: "Label on a Cable",
-      completionTime: "6 months",
-      technologies:
-        "Javascript, React Native CLI, Redux, React Navigation, React Query, NFC Manager, Lottie, SVG",
-      liveDemoLink:
-        "https://apps.apple.com/fi/app/loc-label-on-a-cable/id1643531827?platform=ipad",
-      githubLink: "https://github.com/ahmedfouad01099/LOC",
-    },
-    {
-      id: 2,
-      title: "CANNULA - Medical Services Platform",
-      description:
-        "A medical services platform where doctors/nurses can register as service providers and connect with patients. Patients can request services, find doctor locations, and choose between urgent, corona, elder care services.",
-      image: "https://i.postimg.cc/CLKRFfSN/logo.webp",
-      client: "CANNULA FOR MEDICAL SERVICES",
-      completionTime: "6 months",
-      technologies:
-        "Javascript, Expo, React Navigation, Redux, Location Services, Notifications, Maps, React Query",
-      liveDemoLink:
-        "https://apps.apple.com/eg/app/cannula/id1602269914?platform=iphone",
-      githubLink: "https://github.com/ahmedfouad01099/canola",
-    },
-    {
-      id: 3,
-      title: "Hedeya Stores - Mothers & Kids E-commerce",
-      description:
-        "The leading mothers and kids store in Egypt & Middle East for toys, newborn necessities, mum's stuff, learning games, bathing necessities, car seats, strollers, and nursery items.",
-      image: "https://i.postimg.cc/CM7ZT4Tf/logo.webp",
-      client: "Hedeya Stores",
-      completionTime: "6 months",
-      technologies:
-        "Javascript, React Native CLI, React Navigation, Axios, Firebase, SQLite, Redux, React Query",
-      liveDemoLink: "https://apps.apple.com/eg/app/hedeya-stores/id1039973157",
-      githubLink: "https://bitbucket.org/hedeya/hedeya-mobile/src/master/",
-    },
-    {
-      id: 4,
-      title: "Usedo - Secondhand Selling Platform",
-      description:
-        "Kuwait's only secondhand selling app that eliminates meetups with secure payment gateway and reliable delivery services. Makes buying and selling secondhand items easy and exceptional.",
-      image: "https://i.postimg.cc/pX1pyXdH/logo.webp",
-      client: "Usedo | Sell & Buy Online",
-      completionTime: "6 months",
-      technologies:
-        "Typescript, React Native CLI, React Navigation, Axios, KNET Payment, Webview, Redux-Saga, Firebase",
-      liveDemoLink:
-        "https://apps.apple.com/eg/app/usedo-sell-buy-online/id1523226674",
-      githubLink: "https://bitbucket.org/microtechnologies/app-usedoo",
-    },
-    {
-      id: 5,
-      title: "Sala Hub - Entertainment Platform",
-      description:
-        "A leader in KSA's entertainment sector focusing on family bonding and social development. Enhances quality of life by spreading joy and driving progress throughout the Kingdom.",
-      image: "https://i.postimg.cc/02Nz8JP7/logo.webp",
-      client: "Sala Entertainment",
-      completionTime: "6 months",
-      technologies:
-        "Typescript, React Native CLI, Redux, React Navigation, Apollo Client, Firebase, Payment Processing",
-      liveDemoLink: "https://apps.apple.com/eg/app/sala-hub/id1582542716",
-      githubLink: "https://github.com/TCF-Sala/mobile",
-    },
-    {
-      id: 6,
-      title: "Tactec - Football Management System",
-      description:
-        "Comprehensive football management app for players, tactical, medical & management journeys to help clubs increase efficiency and performance.",
-      image: "https://i.postimg.cc/9fxWgLqC/logo.webp",
-      client: "Tactec Football",
-      completionTime: "6 months",
-      technologies:
-        "Typescript, React Native CLI, Redux, React Navigation, React Query, Firebase, Real-time Features",
-      liveDemoLink: "https://apps.apple.com/us/app/tactec/id1668711028",
-      githubLink: "https://github.com/ahmedfouad01099/UDAlmeria",
-    },
-    {
-      id: 7,
-      title: "Vendoria - E-commerce Backend System",
-      description:
-        "Robust backend system for e-commerce platform with user authentication, payment processing, inventory management, and real-time features.",
-      image: "https://i.postimg.cc/sfmBdJd1/logo.png",
-      client: "Vendoria",
-      completionTime: "6 months",
-      technologies:
-        "Javascript, Express, MongoDB, JWT, Socket.io, Stripe, PayPal, Cloudinary, Nodemailer",
-      liveDemoLink:
-        "https://www.apidog.com/apidoc/shared-fd59d3bb-1115-4e3a-b8f5-3fe5a56ca00d/doc-705458",
-      githubLink: "https://github.com/Vendoria/backend",
-    },
-    {
-      id: 8,
-      title: "Vendoria Dashboard - Admin Management System",
-      description:
-        "Comprehensive admin dashboard for managing e-commerce operations, analytics, user management, and business intelligence.",
-      image: "https://i.postimg.cc/ZKFzDw1g/1.png",
-      client: "Vendoria",
-      completionTime: "6 months",
-      technologies:
-        "Javascript, ReactJs, Redux Toolkit, Cloudinary, Chart.js, Socket.io, React Hook Form, i18next",
-      liveDemoLink:
-        "https://www.apidog.com/apidoc/shared-fd59d3bb-1115-4e3a-b8f5-3fe5a56ca00d/doc-705458",
-      githubLink: "https://github.com/Vendoria/backend",
-    },
-  ];
-
   const ProjectSlide = ({ project }: { project: ProjectItem }) => (
     <div className="p-lg-5 p-md-4 p-3 border border-1 mt-5 bg-3">
       <div className="row">
@@ -253,10 +336,17 @@ export default function Projects2() {
           />
         </div>
         <div className="col-lg-7 ps-lg-5 mt-5 mt-lg-0">
-          <h4
-            className="text-linear-4"
-            dangerouslySetInnerHTML={{ __html: project.title }}
-          />
+          <Link
+            href={`/projects/${project.id}`}
+            className="text-decoration-none"
+            target={project.liveDemoLink ? "_blank" : "_self"}
+          >
+            <h4
+              className="text-linear-4"
+              dangerouslySetInnerHTML={{ __html: project.title }}
+            />
+          </Link>
+
           <p>{project.description}</p>
           <ul className="mt-4 list-unstyled">
             <li className="text-secondary-2 mb-3 border-bottom pb-3">
