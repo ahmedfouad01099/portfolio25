@@ -62,14 +62,20 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
             className="carousel-btn carousel-btn-prev position-absolute top-50 start-0 translate-middle-y bg-white border-0 rounded-circle shadow"
             style={{ width: "50px", height: "50px", left: "20px" }}
           >
-            <i className="ri-arrow-left-s-line fs-4 text-dark"></i>
+            <i
+              className="ri-arrow-left-s-line fs-4"
+              style={{ color: "black" }}
+            ></i>
           </button>
           <button
             onClick={nextSlide}
             className="carousel-btn carousel-btn-next position-absolute top-50 end-0 translate-middle-y bg-white border-0 rounded-circle shadow"
             style={{ width: "50px", height: "50px", right: "20px" }}
           >
-            <i className="ri-arrow-right-s-line fs-4 text-dark"></i>
+            <i
+              className="ri-arrow-right-s-line fs-4"
+              style={{ color: "black" }}
+            ></i>
           </button>
         </>
       )}
