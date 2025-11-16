@@ -278,28 +278,28 @@ export default function ContactSection({
               <h6 className="text-primary-2 mb-3">Follow Us</h6>
               <div className="d-flex gap-3">
                 <Link
-                  href="#"
+                  href="https://www.facebook.com/ahmed.fouad.658699/"
                   className="icon-shape icon-md border border-1 rounded-3 bg-3 d-flex align-items-center justify-content-center"
                 >
-                  <i className="ri-twitter-fill text-primary-2" />
+                  <i className="ri-facebook-fill text-primary-2" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/in/ahmed-fouad-b4b9b51a6/"
                   className="icon-shape icon-md border border-1 rounded-3 bg-3 d-flex align-items-center justify-content-center"
                 >
                   <i className="ri-linkedin-fill text-primary-2" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://github.com/ahmedfouad01099"
                   className="icon-shape icon-md border border-1 rounded-3 bg-3 d-flex align-items-center justify-content-center"
                 >
-                  <i className="ri-dribbble-fill text-primary-2" />
+                  <i className="ri-github-fill text-primary-2" />
                 </Link>
                 <Link
-                  href="#"
+                  href="http://twitter.com"
                   className="icon-shape icon-md border border-1 rounded-3 bg-3 d-flex align-items-center justify-content-center"
                 >
-                  <i className="ri-behance-fill text-primary-2" />
+                  <i className="ri-twitter-x-fill text-primary-2" />
                 </Link>
               </div>
             </div>

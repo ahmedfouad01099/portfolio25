@@ -40,9 +40,9 @@ export default function OffCanvas({ isOffCanvas, handleOffCanvas }: any) {
 								<Link href="https://github.com/ahmedfouad01099" target="_blank">
 									<i className="ri-github-fill fs-18" />
 								</Link>
-								<Link href="https://twitter.com" target="_blank">
+								{/* <Link href="https://twitter.com" target="_blank">
 									<i className="ri-twitter-x-fill fs-18" />
-								</Link>
+								</Link> */}
 							</div>
 						</div>
 					</div>
