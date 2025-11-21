@@ -47,7 +47,7 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 									</ul>
 
 									{/* Contact Info Section with your real data */}
-									<div className="mobile-contact-info mt-5 p-4 rounded-3">
+									<div className="mobile-contact-info mt-5 p-4 bg-light rounded-3">
 										<h6 className="mb-4 text-dark fw-bold">Get In Touch</h6>
 										
 										<div className="contact-item mb-3 d-flex align-items-start">
