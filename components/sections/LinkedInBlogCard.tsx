@@ -16,19 +16,6 @@ export default function LinkedInBlogCard() {
     {
       id: 2,
       iframeSrc:
-        "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7395671175936413696",
-      postUrl:
-        "https://www.linkedin.com/posts/ahmed-fouad-b4b9b51a6_reactnative-mobiledevelopment-javascript-activity-7395671293422997505-CVZ2",
-      height: 670,
-      category: "LinkedIn",
-      date: "Shared Post",
-      title: "React Native Event Loop & State Updates",
-      description:
-        "A deep explanation of how fast events interact with the JS thread and why functional updates matter.",
-    },
-    {
-      id: 3,
-      iframeSrc:
         "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7391094609688379393",
       postUrl:
         "https://www.linkedin.com/posts/ahmed-fouad-b4b9b51a6_%D8%A3%D9%83%D9%8A%D8%AF-%D9%83%D9%84%D9%86%D8%A7-%D9%81%D9%8A-interviews-%D8%A3%D9%88-%D8%AD%D8%AA%D9%89-%D9%88%D8%B3%D8%B7-%D8%A7%D9%84%D8%B4%D8%BA%D9%84-activity-7391094648880005120-Kjcw",
@@ -38,6 +25,19 @@ export default function LinkedInBlogCard() {
       title: "Why FlatList Is Better Than ScrollView in React Native?",
       description:
         "Explanation of how FlatList saves memory using virtualization, recycling views, and rendering only what's visible on screen for high performance.",
+    },
+    {
+      id: 3,
+      iframeSrc:
+        "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7395671175936413696",
+      postUrl:
+        "https://www.linkedin.com/posts/ahmed-fouad-b4b9b51a6_reactnative-mobiledevelopment-javascript-activity-7395671293422997505-CVZ2",
+      height: 670,
+      category: "LinkedIn",
+      date: "Shared Post",
+      title: "React Native Event Loop & State Updates",
+      description:
+        "A deep explanation of how fast events interact with the JS thread and why functional updates matter.",
     },
   ];
 
